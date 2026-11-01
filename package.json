@@ -1,0 +1,13 @@
+
+{
+  "name": "devine-hidelink",
+  "version": "1.0.0",
+  "description": "Devine Hidelink Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.27.0"
+  }
+}
