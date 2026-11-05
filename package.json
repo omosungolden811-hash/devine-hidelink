@@ -1,10 +1,12 @@
 {
-  "name": "forsaken-shortener",
+  "name": "devine-hidelink",
   "version": "1.0.0",
-  "private": true,
-  "description": "Temporary in-memory URL shortener for Forsaken Beamzz",
-  "main": "shortener.js",
-  "scripts": { "start": "node shortener.js" },
-  "dependencies": { "express": "^5.1.0" },
-  "engines": { "node": ">=20" }
+  "description": "Devine Hidelink Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.27.0"
+  }
 }
