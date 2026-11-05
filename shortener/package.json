@@ -1,0 +1,8 @@
+{
+  "name": "forsaken-shortener",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "start": "node shortener.js" },
+  "dependencies": { "express": "^5.1.0" },
+  "engines": { "node": ">=20" }
+}
