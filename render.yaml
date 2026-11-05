@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: forsaken-shortener
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: shortener
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: SHORTENER_API_KEY
+        generateValue: true
