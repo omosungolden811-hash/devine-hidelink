@@ -28,16 +28,9 @@ app.post("/api/links", (req, res) => {
   const recent = (requests.get(ip) || []).filter(t => now - t < 60_000);
   if (recent.length >= 10) return res.status(429).json({ error: "Too many links created. Please wait a minute and try again." });
   recent.push(now); requests.set(ip, recent);
-  let target;
-  try {
-    target = new URL(req.body?.url);
-    if (!["http:", "https:"].includes(target.protocol) || target.username || target.password) throw new Error();
-  } catch {
-    return res.status(400).json({ error: "Enter a valid HTTP or HTTPS link." });
-  }
   const destinations = {"Profile":"https://www.roblox.com/users/23494923904/profile","Private server":"https://www.roblox.com/share?code=432c637cacf937468947036827ff896f&type=Server","Group":"https://www.roblox.com/communities/349673921/about"};
   const kind = Object.hasOwn(destinations, req.body?.kind) ? req.body.kind : "Profile";
-  target = new URL(destinations[kind]);
+  const target = new URL(destinations[kind]);
   let code;
   do { code = crypto.randomBytes(5).toString("base64url"); } while (links.has(code));
   links.set(code, { url: target.href, kind });
